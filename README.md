@@ -9,7 +9,7 @@ This project classifies constellation images based on four categories: aries, li
 
 ## Running this project
 
-1. Collect a dataset of images for each aries, libra, pisces, and virgo constellations. You can also use Kaggle to download a dataset of images. [Dataset I used for some of the images: https://www.kaggle.com/datasets/tejask257/star-constellation] 
+1. Collect a dataset of images for each aries, libra, pisces, and virgo constellations. You can also use Kaggle to download a dataset of images. [Dataset I used for images: https://www.kaggle.com/datasets/tejask257/star-constellation] 
 2. Within the dataset create three folders titled 'test' 'train' and 'val' . Within each of these folders create four new separate folders titled 'aries' 'libra' 'pisces' and 'virgo'. Put in your corresponding constellation images into each of these folders.
 3. Give your dataset a name, such as constellations, and upload it to VS Code by dragging and dropping.
 4. Within your dataset file create another file titled 'labels.txt'. In this file type aries, libra, pisces, and virgo on separate lines.
