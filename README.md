@@ -33,3 +33,41 @@ This project classifies constellation images based on four categories: aries, li
 VIDEO DEMO:
 https://github.com/skammu18/Constellations/assets/173948115/e59b0735-1696-4a76-8ac1-fdc365ab85d1 
 
+
+## Running the Program Through Python
+
+1. Create a python image classification program in order to effectively run your model each time you check an image.
+2. First, create a new file under your project folder titled constellations.py
+3. To automatically access the python interpreter add this code: #!/usr/bin/python3
+4. Import the jetson modules required to load and process the images:
+   
+import jetson_inference
+
+import jetson_utils
+
+import argparse
+
+5. To parse the image file:
+   
+   parser = argparse.ArgumentParser()
+
+   parser.add_argument("filename", type=str, help="filename of the image to process")
+
+6. Add: opt = parser.parse_args()
+
+7. Add the code that allows you to load an image: img = jetson_utils.loadImage(opt.filename)
+
+8. Add: net = jetson_inference.imageNet(model="resnet18.onnx",labels="labels.txt",input_blob="input_0", output_blob="output_0")
+
+9. Classify the image: class_idx, confidence = net.Classify(img)
+
+10. Get the class description: class_desc = net.GetClassDesc(class_idx)
+
+11. Output result: print("This constellation is "+ str(class_desc) +" (class #"+ str(class_idx) +") with " + str(confidence*100)+"% confidence")
+
+12. To download an image, return to your terminal and type ‘wget [link to image]’
+
+13. To view the final output and classification, type: python3 constellations.py [name of image file].jpg
+
+
+
